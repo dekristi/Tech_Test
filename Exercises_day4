@@ -1,0 +1,30 @@
+temp = input('What is your temperature?')
+user_temp = float(temp)
+if user_temp < 35:
+    print('not too cold?!')
+elif user_temp > 35 < 37:
+    print('all right')
+else:
+    print('possible fever')
+
+#The company has promised a Christmas bonus in the amount of 15% of the monthly salary for EVERY year of service over 2 years.
+
+# Task. Ask the user for the amount of the monthly salary and the number of years worked.
+
+# Calculate the bonus.
+
+# Example1: 5 years of experience, 1000 Euro salary, the bonus will be 450 Euro.
+
+# Example2: 1.5 years of experience, 1500 Euro salary, no bonus(0)
+
+experience = input('How long do you work for EVERY? ')
+user_experience = float(experience)
+salary = input('What is your salary? ')
+user_salary = float(salary)
+
+if user_experience > 2:
+    bonus = (user_experience - 2) * (user_salary *0.15)
+    print(f'bonus {bonus}  EUR')
+else:
+    bonus = 0
+    print(f'bonus {bonus} EUR')
