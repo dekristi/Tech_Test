@@ -22,7 +22,7 @@ star = '*'
 
 for i in text:
     display_list += star
-    # print(display_list)
+print(display_list)
 
 end_of_game = False
 
