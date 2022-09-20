@@ -1,8 +1,16 @@
+# # The user enters a name.
+#
+# You print user name in reverse (should begin with capital letter)
+# then extra text: ",a thorough mess is it not ", then the first name of the user name then "?"
+#
+# Example:
+#
+# Enter: Valdis -> Output: Sidlav, a thorough mess is it not V?
+# 
 # name = input('Please enter your name! ')
-
 # print(name)
 # conv_name = name[::-1].lower()
-# print(conv_name.capitalize())
+# print(f'{conv_name.capitalize()}, a thorough mess is it not {name[0].upper()}')
 
 
 ## Exercise Nr.2 Write a program to recognize a text symbol
@@ -15,35 +23,61 @@
 # First input: Kartupeļu lauks -> ********* *****
 # Second input: a -> *a****** *a***
 
-text = input('Please enter a text ').lower()
-display_list = []
-text_length = len(text)
-star = '*'
+# picture_1line = '-'*9 
+# picture_2line = '-'*2 + '+' + '-'*3 + '+'
+# picture_3line = ' '*2 + '|' + ' '*3 + '|'
+# picture_4line = ' '*2 + 'O' + ' '*3 + '|'
+# picture_5line = ' ' + '/' + '|' + '\\' + ' '*2 + '|'
+# picture_line5 = ' ' + '/' + '|' + ' '*3 + '|'
+# picture_6line = ' ' + '/' + ' ' + '\\' + ' '*2 + '|'
+# picture_7line = ' '*6 +'|'
+# picture_line6 = ' ' + '/' + ' '*4 + '|'
+# stage7 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_5line}\n{picture_6line}\n{picture_7line}\n{picture_1line}')
+# stage6 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_5line}\n{picture_line6}\n{picture_7line}\n{picture_1line}')
+# stage5 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_5line}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
+# stage4 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_line5}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
+# stage3 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
+# stage2 = (f'{picture_2line}\n{picture_3line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
+# stage1 = (f'{picture_2line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
+# stage = (stage7, stage6, stage5, stage4, stage3, stage2, stage1)
 
-for i in text:
-    display_list += star
-print(display_list)
+# lives = 6
 
-end_of_game = False
+# text = input('Please enter a text ').lower()
+# display_list = []
+# text_length = len(text)
 
-while not end_of_game:
-    guess = input("Please guess a letter!: ").lower()
-    # clear()
+# star = '*'
 
-    if guess in display_list:
-        print(f"You have already guessed {guess}!")
+# for i in text:
+#     display_list += star
+# print(display_list)
 
-    for position in range(text_length):
-        letter = text[position]
+# end_of_game = False
 
-        if letter == guess:
-            display_list[position] = letter    
+# while not end_of_game:
+#     guess = input("Please guess a letter!: ").lower()
+    
+#     if guess in display_list:
+#         print(f"You have already guessed {guess}!")
 
-    print(display_list)
+#     for position in range(text_length):
+#         letter = text[position]
 
-    if star not in display_list:
-        end_of_game = True
-        print("You win!")
+#         if letter == guess:
+#             display_list[position] = letter    
+
+#     print(display_list)
+
+#     if letter != guess:
+#         lives -= 1
+#         print('You did not guess, please try again!')
+#         print(stage[lives])
+
+#     if star not in display_list:
+#         end_of_game = True
+#         print("You win!")
+
 
 
 
@@ -61,8 +95,6 @@ while not end_of_game:
 # Exception: if the words in the input are not .... bad, 
 # then the output is not ...  bad section must be changed to is good
 
-
-
 # Examples:
 
 # The weather is not bad -> The weather is good
@@ -76,3 +108,27 @@ while not end_of_game:
 # Find (or index, or even rfind) will probably come in handy, as may an operator. Also slice syntax will be useful.
 
 # Extra: How would you do this task in Latvian language (nav slikts/a -> ir labs/a)?
+
+sentence = input('Please enter your sentence! ')
+spl_sentence = sentence.split()
+
+for word in spl_sentence:
+        
+    negative_bad = spl_sentence.index('bad')
+    new_sentence =''
+        
+    if 'is' and 'bad' in spl_sentence:
+        negative_is = spl_sentence.index('is')
+        new_sentence = (new_sentence.join(spl_sentence[:negative_is]) + ' is good ' + str(spl_sentence[negative_bad+1:]))
+        print(new_sentence)
+        
+    # elif 'are' and 'bad' in spl_sentence:
+    #     negative_are = spl_sentence.index('are')
+    #     new_sentence = (str(spl_sentence[:negative_are]) + ' are good ' + str(spl_sentence[negative_bad + 1:]))
+    # else:   
+    # # if 'bad' not in sentence:
+    #     print(sentence)
+
+print(new_sentence)
+    
+    
