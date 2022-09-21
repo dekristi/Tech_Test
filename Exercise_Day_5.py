@@ -7,10 +7,10 @@
 #
 # Enter: Valdis -> Output: Sidlav, a thorough mess is it not V?
 # 
-# name = input('Please enter your name! ')
-# print(name)
-# conv_name = name[::-1].lower()
-# print(f'{conv_name.capitalize()}, a thorough mess is it not {name[0].upper()}')
+name = input('Please enter your name! ')
+print(name)
+conv_name = name[::-1].lower()
+print(f'{conv_name.capitalize()}, a thorough mess is it not {name[0].upper()}')
 
 
 ## Exercise Nr.2 Write a program to recognize a text symbol
@@ -23,65 +23,61 @@
 # First input: Kartupeļu lauks -> ********* *****
 # Second input: a -> *a****** *a***
 
-# picture_1line = '-'*9 
-# picture_2line = '-'*2 + '+' + '-'*3 + '+'
-# picture_3line = ' '*2 + '|' + ' '*3 + '|'
-# picture_4line = ' '*2 + 'O' + ' '*3 + '|'
-# picture_5line = ' ' + '/' + '|' + '\\' + ' '*2 + '|'
-# picture_line5 = ' ' + '/' + '|' + ' '*3 + '|'
-# picture_6line = ' ' + '/' + ' ' + '\\' + ' '*2 + '|'
-# picture_7line = ' '*6 +'|'
-# picture_line6 = ' ' + '/' + ' '*4 + '|'
-# stage7 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_5line}\n{picture_6line}\n{picture_7line}\n{picture_1line}')
-# stage6 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_5line}\n{picture_line6}\n{picture_7line}\n{picture_1line}')
-# stage5 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_5line}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
-# stage4 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_line5}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
-# stage3 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
-# stage2 = (f'{picture_2line}\n{picture_3line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
-# stage1 = (f'{picture_2line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
-# stage = (stage7, stage6, stage5, stage4, stage3, stage2, stage1)
+picture_1line = '-'*9 
+picture_2line = '-'*2 + '+' + '-'*3 + '+'
+picture_3line = ' '*2 + '|' + ' '*3 + '|'
+picture_4line = ' '*2 + 'O' + ' '*3 + '|'
+picture_5line = ' ' + '/' + '|' + '\\' + ' '*2 + '|'
+picture_line5 = ' ' + '/' + '|' + ' '*3 + '|'
+picture_6line = ' ' + '/' + ' ' + '\\' + ' '*2 + '|'
+picture_7line = ' '*6 +'|'
+picture_line6 = ' ' + '/' + ' '*4 + '|'
+stage7 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_5line}\n{picture_6line}\n{picture_7line}\n{picture_1line}')
+stage6 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_5line}\n{picture_line6}\n{picture_7line}\n{picture_1line}')
+stage5 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_5line}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
+stage4 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_line5}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
+stage3 = (f'{picture_2line}\n{picture_3line}\n{picture_4line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
+stage2 = (f'{picture_2line}\n{picture_3line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
+stage1 = (f'{picture_2line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_7line}\n{picture_1line}')
+stage = (stage7, stage6, stage5, stage4, stage3, stage2, stage1)
 
-# lives = 6
+lives = 6
 
-# text = input('Please enter a text ').lower()
-# display_list = []
-# text_length = len(text)
+text = input('Please enter a text ').lower()
+display_list = []
+text_length = len(text)
 
-# star = '*'
+star = '*'
 
-# for i in text:
-#     display_list += star
-# print(display_list)
+for i in text:
+    display_list += star
+print(display_list)
 
-# end_of_game = False
+end_of_game = False
 
-# while not end_of_game:
-#     guess = input("Please guess a letter!: ").lower()
+while not end_of_game:
+    guess = input("Please guess a letter!: ").lower()
     
-#     if guess in display_list:
-#         print(f"You have already guessed {guess}!")
+    if guess in display_list:
+        print(f"You have already guessed {guess}!")
 
-#     for position in range(text_length):
-#         letter = text[position]
+    for position in range(text_length):
+        letter = text[position]
 
-#         if letter == guess:
-#             display_list[position] = letter    
+        if letter == guess:
+            display_list[position] = letter    
 
-#     print(display_list)
+    print(display_list)
 
-#     if letter != guess:
-#         lives -= 1
-#         print('You did not guess, please try again!')
-#         print(stage[lives])
+    if letter != guess:
+        lives -= 1
+        print('You did not guess, please try again!')
+        print(stage[lives])
 
-#     if star not in display_list:
-#         end_of_game = True
-#         print("You win!")
+    if star not in display_list:
+        end_of_game = True
+        print("You win!")
 
-
-
-
-# In principle, this is a good start to the game of hangman.
 
 
 # 3. Text conversion
@@ -110,25 +106,19 @@
 # Extra: How would you do this task in Latvian language (nav slikts/a -> ir labs/a)?
 
 sentence = input('Please enter your sentence! ')
+print(sentence)
 spl_sentence = sentence.split()
 
-for word in spl_sentence:
-        
-    negative_bad = spl_sentence.index('bad')
-    new_sentence =''
-        
-    if 'is' and 'bad' in spl_sentence:
-        negative_is = spl_sentence.index('is')
-        new_sentence = (new_sentence.join(spl_sentence[:negative_is]) + ' is good ' + str(spl_sentence[negative_bad+1:]))
-        print(new_sentence)
-        
-    # elif 'are' and 'bad' in spl_sentence:
-    #     negative_are = spl_sentence.index('are')
-    #     new_sentence = (str(spl_sentence[:negative_are]) + ' are good ' + str(spl_sentence[negative_bad + 1:]))
-    # else:   
-    # # if 'bad' not in sentence:
-    #     print(sentence)
+new_sentence =''
 
+if 'not' and 'bad'  in spl_sentence:
+    not_index = spl_sentence.index('not')
+    bad_index = spl_sentence.index('bad')
+    new_sentence = (' '.join(spl_sentence[:not_index]) + ' good ' + ' '.join(spl_sentence[bad_index + 1:]))
+else:
+    new_sentence == sentence
 print(new_sentence)
+
+
     
     
