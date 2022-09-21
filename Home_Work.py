@@ -21,16 +21,21 @@ name2 = input('Please enter a text! ').lower()
 
 count_list = ''
 
-for i in name2:
-    if i not in count_list and i in name1[::]:
-        count_list += str((i) + " " + str(name1.count(i)) + ",")
-        count_list_split = count_list.split(',')
-        alphab_list = ', '.join(sorted(count_list_split, key=str.lower))
+while True:
+    for i in name2:
+        
+        if i not in count_list and i in name1[::]:
+            count_list += str((i) + " " + str(name1.count(i)) + ",")
+            count_list_split = count_list.split(',')
+            alphab_list = ', '.join(sorted(count_list_split, key=str.lower))
+           
+    if len(count_list) == 0:
+        print("None of characters are in the first string")
+        break
+    print(alphab_list[2:])
+    break
 
-print(alphab_list)
 
-if i not in count_list:
-    print("None of characters are in the first string")
 
 
 ## Exercise Nr.2 Hangman
