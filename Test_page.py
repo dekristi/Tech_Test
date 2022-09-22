@@ -49,5 +49,5 @@ def is_palindrome(text):
         return False
 
 
-my_text = is_palindrome('Ab ba')
+my_text = is_palindrome('Alus ari ira sula')
 print(my_text)

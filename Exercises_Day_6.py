@@ -83,18 +83,28 @@ print(rev_sent.capitalize())
 # from previous exercise
 
 num_list = []
-
+prime_num = False
 while True:
     numbers = int(input('How much first prime numbers you want to know? '))
+    max_num = numbers**3
+    clear()
+
     
-    for i in range(2, numbers**3):
+    for i in range(2, max_num):
         if i > 0:
-            for num in range(2, (i + 1)):
-                if i % num == 0:
-                    continue
-                if i % num != 0 and i % 2 != 0:
+            for num in range(2, max_num):
+                               
+                if i % num == 0 and i != num:
+                    break
+                if i <= num:
+                    break
+           
+                else:
                     if i not in num_list:
                         num_list.append(i)
-   
+#                 # if i % num != 0 and i % 2 != 0:
+#                 #     if i not in num_list:
+#                 #         num_list.append(i)
+    print(num_list)
     print(f'First {numbers} prime numbers are: {num_list[:numbers]}')
     break
