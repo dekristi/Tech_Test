@@ -12,14 +12,40 @@
 
 # PSS function should return the result, not print it.
 
-def add_mult(a: int, b: int, c: int):
-    my_list = [a,b,c]
-    sort_list = sorted(my_list)
-    a = sort_list[0]
-    b = sort_list[1]
-    c = sort_list[2]
-    result = (a + b) * c
-    return result
+# def add_mult(a: int, b: int, c: int):
+#     my_list = [a,b,c]
+#     sort_list = sorted(my_list)
+#     a = sort_list[0]
+#     b = sort_list[1]
+#     c = sort_list[2]
+#     result = (a + b) * c
+#     return result
 
-my_result = add_mult(5,2,4)
-print(my_result)
+# my_result = add_mult(5,2,4)
+# print(my_result)
+
+# 2. Palindrome
+
+# Write the function is_palindrome(text)
+
+# which returns a bool True or False depending on whether the word or sentence is read equally from both sides.
+
+# PS You can start with a one-word solution from the beginning, but the full solution will ignore whitespace and uppercase and lowercase letters.
+
+
+
+# is_palindrome ("Alus ari i ra    sula") -> True
+
+# is_palindrome("ABa") -> True
+
+# is_palindrome("nava") -> False
+
+def is_palindrome(text):
+    if text == text[::-1]:
+        return True
+    else:
+        return False
+
+
+my_text = is_palindrome('abba')
+print(my_text)
