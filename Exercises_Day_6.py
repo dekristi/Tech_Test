@@ -85,7 +85,7 @@ print(rev_sent.capitalize())
 num_list = []
 
 while True:
-    numbers = int(input('How much first prime numbers you want to? '))
+    numbers = int(input('How much first prime numbers you want to know? '))
     
     for i in range(2, numbers**3):
         if i > 0:
