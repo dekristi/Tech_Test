@@ -1,13 +1,25 @@
-print("I am so happy!")
+#1. The Big Result
 
-ask_name = input("What is your name ? ")
+# Write an add_mult function that requires three parameters / arguments
 
-user_age = input(f'{ask_name}, how old you are?')
-import datetime
-current_year = datetime.datetime.now().year
+# Returns the result that is the sum of the 2 smallest arguments multiplied by the largest argument value.
 
-age = int(user_age)
+# PS Assume that numeric parameters will always be passed to the function, no need to check types
 
-hundred = int(current_year) - age + 100
+# Various solutions are possible (you are allowed to use other data structures inside function such as list).
 
-print(f'{ask_name} in {hundred} you will be 100 years old!')
+# Example add_mult (2,5,4) -> will return (2 + 4) * 5 = 30
+
+# PSS function should return the result, not print it.
+
+def add_mult(a: int, b: int, c: int):
+    my_list = [a,b,c]
+    sort_list = sorted(my_list)
+    a = sort_list[0]
+    b = sort_list[1]
+    c = sort_list[2]
+    result = (a + b) * c
+    return result
+
+my_result = add_mult(5,2,4)
+print(my_result)
