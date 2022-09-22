@@ -41,11 +41,13 @@
 # is_palindrome("nava") -> False
 
 def is_palindrome(text):
+    text = text.lower()
+    text = text.strip()
     if text == text[::-1]:
         return True
     else:
         return False
 
 
-my_text = is_palindrome('abba')
+my_text = is_palindrome('Ab ba')
 print(my_text)
