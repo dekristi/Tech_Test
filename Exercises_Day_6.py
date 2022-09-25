@@ -82,29 +82,26 @@ print(rev_sent.capitalize())
 # so remember we already know how to find a single prime number 
 # from previous exercise
 
-num_list = []
-prime_num = False
-while True:
-    numbers = int(input('How much first prime numbers you want to know? '))
-    max_num = numbers**3
-    clear()
+prime_list = [2,]
+num = int(input('How many prime numbers do you want to display? '))
+start_num = 1
 
+while True:
+    prime_list_length = len(prime_list) 
+
+    for i in range(2, start_num):
+        if start_num % i == 0 and start_num in prime_list:
+            # prime_list = [n.replace("start_num", "") for n in prime_list]
+            prime_list = prime_list[:-1]
+
+        if start_num % i == 0:
+            break
     
-    for i in range(2, max_num):
-        if i > 0:
-            for num in range(2, max_num):
-                               
-                if i % num == 0 and i != num:
-                    break
-                if i <= num:
-                    break
-           
-                else:
-                    if i not in num_list:
-                        num_list.append(i)
-#                 # if i % num != 0 and i % 2 != 0:
-#                 #     if i not in num_list:
-#                 #         num_list.append(i)
-    print(num_list)
-    print(f'First {numbers} prime numbers are: {num_list[:numbers]}')
-    break
+        else:
+            if start_num not in prime_list:
+                prime_list.append(start_num)
+    if prime_list_length < num:
+        start_num += 1
+    if prime_list_length == num:
+        print(prime_list)
+        break
