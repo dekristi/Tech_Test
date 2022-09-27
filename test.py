@@ -1,36 +1,35 @@
-# # 3. City Population
+# 2. Common Elements
+# Write a function that returns a tuple with common elements in three sequences. Inputs can be list, tuple, string.
 
-# The city has a known population p0
-# A percentage of population perc is added each year
-# Every year a certain number of delta also arrive (or leave)
-# We need to know when (if at all) the city will reach a population of p
+# get_common_elements(seq1, seq2, seq3)
 
-# Write a function get_city_year (p0, perc, delta, target_p) that returns the years (full) when target_p is reached.
-# If target_p cannot be reached, then we return -1
 # Example:
-# get_city_year(1000,2,50,1200) -> 3
 
-# 1000 + 1000 * 0.02 + 50 => 1070 after the 1st year
-# notice that we have an integer (whole number) percentage, so the population after the 1st year is 1070, not 1070.4 or 1070.6
+# get_common_elements("abc", ['a', 'b'], ('b', 'c')) -> ('b',) # we return a tuple with a single element 
 
-# 1070 + 1070 * 0.02 + 50 => 1141 after the 2nd year
+# # remember that we can convert strings to set with set(mystring), and set to tuple with tuple(myset)
 
-# 1141 + 1141 * 0.02 + 50 => 1213 after the 3rd year 
-# so the function here returns 3 and is done
-# PS. Note that we give perc as a percentage to be converted to a decimal number.
+# 2. b For those with some experience 
 
-def get_city_year(p0:int, perc:float, delta:int, target_p:int):
-    change = round((target_p - p0) / ((p0 * (perc / 100 + 1) + delta) - p0), ) 
-    if change < 0:
-        return '-1'
-    return change
+# BONUS:  make a function that can handle an arbitrary number of input sequences
+# so function which takes any number of sequences and returns a tuple with common elements
+# get_common_elements(seq1, seq2, seq3, seq4, seq5, seq6, seq7) etc :), so just like print takes any number of values
 
-years_change = get_city_year(1500000, 2.5, 10000, 2000000)
-print(years_change)
+def common_elements(seq1, seq2, seq3):
+    same_elements = set(seq1) & set(seq2) & set(seq3)
+    tup_same_elements = tuple(same_elements)
+    return tup_same_elements
 
-# More test examples:
-# get_city_year(1000, 2, -50, 5000) -> -1 
-# get_city_year(1500, 5, 100, 5000) -> 15
-# get_city_year(1500000, 2.5, 10000, 2,000,000) -> 10
-# the trickiest case is something like this
-# get_city_year(1000, -3, 50, 2000) -> -1 is the correct answer but how to get there?
+my_elements = common_elements(['a', 'b'], ('b', 'c'), "abc")
+print(my_elements)
+
+from statistics import mean
+def get_min_avg_max (seq: tuple):
+    min_num = int(min(seq))
+    max_num = int(max(seq))
+    avg_num = int(mean(seq))
+    my_string = (min_num, avg_num, max_num,)
+    return my_string
+
+min_avg_max = get_min_avg_max([0,10,1,9])
+print(min_avg_max)
