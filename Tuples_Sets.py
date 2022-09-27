@@ -16,20 +16,15 @@
 # get_common_elements(seq1, seq2, seq3, seq4, seq5, seq6, seq7) etc :), so just like print takes any number of values
 
 def common_elements(seq1, seq2, seq3):
-    same_elements = set(seq1) & set(seq2) & set(seq3)
-    tup_same_elements = tuple(same_elements)
-    return tup_same_elements
+    return set(seq1) & set(seq2) & set(seq3)
+
 
 my_elements = common_elements(['a', 'b'], ('b', 'c'), "abc")
 print(my_elements)
 
 from statistics import mean
 def get_min_avg_max (seq: tuple):
-    min_num = int(min(seq))
-    max_num = int(max(seq))
-    avg_num = int(mean(seq))
-    my_string = (min_num, avg_num, max_num,)
-    return my_string
+    return min(seq), mean(seq), max(seq)
 
 min_avg_max = get_min_avg_max([0,10,1,9])
 print(min_avg_max)
@@ -60,9 +55,9 @@ print(min_avg_max)
 # perfect pangram - a pangram that uses every letter of the alphabet at just once
 
 def is_pangram(text, alphabet='abcdefghijklmnopqrstuvwxyz'):
-    spl_text = set(text.lower().split())
-    spl_alph = set(alphabet.split())
+    spl_text = set(text.lower())
+    spl_alph = set(alphabet)
     return spl_alph.issubset(spl_text)
 
-my_text = is_pangram("The five boxing wizards jump quickly")
+my_text = is_pangram("The five boxing wizards jump quickly", alphabet='abcdefghijklmnopqrstuvwxyz')
 print(f'is_pangram {my_text}')
