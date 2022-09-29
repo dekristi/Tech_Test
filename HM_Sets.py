@@ -17,8 +17,8 @@
  ## 1.One-liner with list
 
 def ordered_string(seq1, seq2, seq3):
-    bad_string = seq3
-    return [i for i in seq1 if i in seq2 and i not in bad_string]
+    
+    return [i for i in seq1 if i in seq2 and i not in seq3]
     
 ## 2 String  
 
