@@ -9,7 +9,7 @@ import random
 # BONUS: Something can be useful from here: https://docs.python.org/3/library/itertools.html
 
 def get_shuffled_cards():
-    card_num = [range(2,11),'A', 'K', 'Q', 'J' ]
+    card_num = ['2', '3', '4', '5', '6', '7', '8', '9', '10','A', 'K', 'Q', 'J' ]
     card_suits = ['clubs ♣', 'diamonds ♦', 'hearts ♥', 'spades ♠']
     cards = [(num, suit) for num in card_num for suit in card_suits] 
     random.shuffle(cards)
