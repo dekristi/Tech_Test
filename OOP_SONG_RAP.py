@@ -68,7 +68,7 @@ class Rap(Song):
         
         rap_text_str = ''.join(rap_text)
         rap_list = re.findall('[a-zA-Z][^A-Z]*', rap_text_str)
-           
+          
         self.max_lines = rap_list[:max_lines]
         if max_lines >= 0:
             print(*self.max_lines, sep='\n')
