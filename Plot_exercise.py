@@ -21,7 +21,7 @@ def plot_dices(dices_list, file_name=''):
     count_list = Counter(list(dices_list))
     df = pd.DataFrame.from_records(list(dict(count_list).items()), columns=['dices','count'])
     print(df)
-    chart = sns.barplot(data=df, x='dices', y='count')
+    chart = sns.barplot(data=df, x='dices', y='count', color='purple')
     for i in chart.containers:  #to display bar values
         chart.bar_label(i,)
     
