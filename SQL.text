@@ -1,0 +1,40 @@
+--SELECT * 
+FROM north_american_cities
+WHERE Country = 'Canada';
+
+--SELECT *
+FROM North_american_cities
+WHERE Country = "United States"
+Order BY Latitude DESC
+
+--SELECT City, Longitude FROM North_american_cities
+WHERE Longitude < -87
+ORDER BY Longitude ASC;
+
+--SELECT City
+FROM North_american_cities
+WHERE Country = 'Mexico'
+ORDER BY Population DESC
+LIMIT 2
+
+--SELECT City
+FROM North_american_cities
+WHERE Country = 'United States'
+ORDER BY Population DESC
+LIMIT 2
+OFFSET 2
+
+-- SELECT * 
+FROM Movies 
+JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_id
+
+
+-- SELECT Title, Domestic_sales, International_sales 
+FROM Movies 
+JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_i 
+WHERE International_sales > Domestic_sales;
+
+--SELECT Title, Rating 
+FROM Movies 
+JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_id 
+ORDER BY Rating DESC
