@@ -38,3 +38,95 @@ WHERE International_sales > Domestic_sales;
 FROM Movies 
 JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_id 
 ORDER BY Rating DESC
+
+--SELECT DISTINCT Building 
+FROM Employees
+
+--SELECT *
+FROM Buildings
+
+SELECT DISTINCT Building_name, Role 
+FROM Buildings 
+LEFT JOIN Employees
+ON Building_name = Building
+
+--SELECT Role, Name 
+FROM employees 
+WHERE Building IS NULL
+
+--SELECT Building_name 
+FROM Buildings 
+LEFT JOIN Employees ON Buildings.Building_name = Employees.Building 
+WHERE Building IS NULL
+
+--SELECT Title, (Domestic_sales + International_sales)/1000000 AS Total_sales_milj 
+FROM movies
+JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_id
+
+--SELECT Title, Rating *10 AS Rating_perc 
+FROM movies
+JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_id
+
+--SELECT *
+FROM movies
+WHERE Year % 2 = 0
+
+Lesson 10
+--SELECT MAX(Years_employed) FROM employees 
+--SELECT Role, AVG(Years_employed) FROM employees GROUP BY Role
+--SELECT Building, SUM(Years_employed) FROM employees GROUP BY Building
+
+Lesson 11
+--SELECT COUNT(Name), Building FROM employees WHERE Role = 'Artist' GROUP BY Building
+--SELECT COUNT(Name), Building, Role FROM employees GROUP BY Role
+--SELECT SUM(Years_employed) FROM employees Where Role = 'Engineer'
+
+Lesson 12
+--SELECT COUNT(Title) AS Total_movies, Director FROM movies AS m GROUP BY Director
+--SELECT SUM(Domestic_sales + International_sales) AS Total_sales, Director 
+FROM movies AS m JOIN Boxoffice AS b ON m.Id = b.Movie_id GROUP BY Director
+
+Lesson 13
+--INSERT INTO Movies 
+(Title, Director, Year, Length_minutes) 
+VALUES ('Toy Story 4', 'John Lasseter', 2022, 97)
+--INSERT INTO Boxoffice 
+(Movie_id, Rating, Domestic_sales, International_sales) 
+VALUES (15, 8.7, 340000000, 270000000)
+
+Lesson 14
+--UPDATE Movies 
+SET Director = 'John Lasseter'
+WHERE Title = "A Bug's Life"
+
+--UPDATE Movies 
+SET Year = 1999
+WHERE Title = "Toy Story 2"
+
+--UPDATE Movies 
+SET Director = 'Lee Unkrich',
+Title = 'Toy Story 3'
+WHERE Title = "Toy Story 8"
+
+Lesson 15
+--DELETE FROM movies WHERE Year < 2005
+--DELETE FROM movies
+WHERE Director = 'Andrew Stanton'
+
+Lesson 16
+--CREATE TABLE Database (
+Name TEXT
+Version FLOAT
+Download_count INTEGER
+)
+
+Lesson 17
+--ALTER TABLE movies
+ADD Aspect_ratio FLOAT;
+--ALTER TABLE movies
+ADD Language TEXT
+    DEFAULT English;
+
+Lesson 18
+--DROP TABLE IF EXISTS movies;
+--DROP TABLE IF EXISTS Boxoffice;
