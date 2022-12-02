@@ -22,7 +22,7 @@ print(f'{conv_name.capitalize()}, a thorough mess is it not {name[0].upper()}')
 # Example:
 # First input: Kartupeļu lauks -> ********* *****
 # Second input: a -> *a****** *a***
-
+from turtle import clear
 picture_1line = '-'*9 
 picture_2line = '-'*2 + '+' + '-'*3 + '+'
 picture_3line = ' '*2 + '|' + ' '*3 + '|'
@@ -53,11 +53,10 @@ for i in text:
     display_list += star
 print(display_list)
 
-end_of_game = False
-
-while not end_of_game:
+while True:
     guess = input("Please guess a letter!: ").lower()
-    
+    clear()
+
     if guess in display_list:
         print(f"You have already guessed {guess}!")
 
@@ -66,17 +65,22 @@ while not end_of_game:
 
         if letter == guess:
             display_list[position] = letter    
-
     print(display_list)
+            
+    if star not in display_list:
+        print("You win!")
+        break
 
-    if letter != guess:
+    # if letter != guess:
+    if guess not in display_list:
         lives -= 1
         print('You did not guess, please try again!')
         print(stage[lives])
-
-    if star not in display_list:
-        end_of_game = True
-        print("You win!")
+    
+    if lives == 0:
+        print("You lose :(")
+        break
+        
 
 
 
