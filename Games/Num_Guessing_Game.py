@@ -13,6 +13,7 @@ logo = """
 print("Welcome to the Number Guessing Game!")
 print("I am thinking of a number between 1 and 100!")
 diffic = input('Choose a difficulty. Type "easy" or "hard": ')
+
 attempt = 0
 if diffic == 'easy':
     attempt = 10
