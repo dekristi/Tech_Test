@@ -61,7 +61,6 @@ while True:
             if dealer_score == 0:
                 print('Dealer has Black Jack!')
                 break
-
         else:
             print('You lose')
             print(f'Dealer score is: {dealer_score}')
